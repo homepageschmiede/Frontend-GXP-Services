@@ -28,19 +28,26 @@ export const AuthProvider = ({ children }) => {
 
                 } else {
                     // optional: Auth-Status zurücksetzen
-                    setAuth(null);
-                    setAxiosAuthToken(null);
+                    //setAuth(null);
+                    //setAxiosAuthToken(null);
                 }
 
             } catch (err) {
                 // Token ungültig / nicht vorhanden / 401
-                setAuth(null);
+                console.log("me failed, keeping auth");
+                //setAuth(null);
             } finally {
                 setLoading(false);
             }
         };
 
-        loadMe();
+        // 🔥 WICHTIG
+        if (!auth?.accessToken) {
+            loadMe();
+        } else {
+            setLoading(false);
+        }
+
     }, []);
 
     return (
