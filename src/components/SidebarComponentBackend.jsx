@@ -17,7 +17,7 @@ function SidebarComponentBackend() {
                     </li>
 
                     <li><a href="/create-rfq">Create RFQ</a></li>
-                    <li><a href="#">List RFQ</a></li>
+                    <li><a href="/rfq/list">List RFQ</a></li>
 
                 </ul>
             </aside>

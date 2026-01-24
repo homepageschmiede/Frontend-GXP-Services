@@ -5,6 +5,8 @@ import DashboardPage from "./pages/DashboardPage";
 import toast from "react-hot-toast";
 import ProtectedRoute from "./context/ProtectedRoute";
 import CreateRfqPage from "./pages/CreateRfqPage.jsx";
+import ListRfqPage from "./pages/ListRfqPage.jsx";
+import DetailRfqPage from "./pages/DetailRfqPage.jsx";
 import LoginToken from "./pages/LoginToken.jsx";
 
 
@@ -19,6 +21,8 @@ const App = () => {
         <Route element={<ProtectedRoute />}>
           <Route path="/dashboard" element={<DashboardPage />} />
           <Route path="/create-rfq" element={<CreateRfqPage />} />
+          <Route path="/rfq/list" element={<ListRfqPage />} />
+          <Route path="/rfq/:id" element={<DetailRfqPage />} />
         </Route>
 
 
